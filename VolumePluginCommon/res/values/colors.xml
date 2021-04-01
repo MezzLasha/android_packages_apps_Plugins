@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="vol_compact_secondary">#f2f2f2</color>
-    <color name="vol_compact_primary">#fcfcfc</color>
+    <color name="vol_compact_primary">#ffffff</color>
+    <color name="compact_icons_color">#0B0B0B</color>
 </resources>
