@@ -997,8 +997,6 @@ public class VolumeDialogImpl implements VolumeDialog {
             }
 
             ColorStateList ringerbackgroundnormal = mContext.getResources().getColorStateList(R.color.ringer_bcg_normal);
-            int RingerMuteT = mContext.getResources().getColor(R.color.ringer_icon_mute);
-            int RingerNormalT = mContext.getResources().getColor(R.color.ringer_icon_normal);
 
             boolean isZenMuted = mState.zenMode == Global.ZEN_MODE_ALARMS
                     || mState.zenMode == Global.ZEN_MODE_NO_INTERRUPTIONS
@@ -1014,7 +1012,6 @@ public class VolumeDialogImpl implements VolumeDialog {
                             mSysUIContext.getString(mSysUIR.string("volume_ringer_hint_mute")));
                     mRingerIcon.setTag(Events.ICON_STATE_VIBRATE);
                     mRinger.setBackgroundTintList(null);
-                    mRingerIcon.setColorFilter(RingerMuteT);
                     break;
                 case AudioManager.RINGER_MODE_SILENT:
                     ringerDrawable = mSysUIContext.getDrawable(
@@ -1023,7 +1020,6 @@ public class VolumeDialogImpl implements VolumeDialog {
                     addAccessibilityDescription(mRingerIcon, RINGER_MODE_SILENT,
                             mSysUIContext.getString(mSysUIR.string("volume_ringer_hint_unmute")));
                     mRinger.setBackgroundTintList(null);
-                    mRingerIcon.setColorFilter(RingerMuteT);
                     break;
                 case AudioManager.RINGER_MODE_NORMAL:
                 default:
@@ -1035,7 +1031,6 @@ public class VolumeDialogImpl implements VolumeDialog {
                                 mSysUIContext.getString(mSysUIR.string("volume_ringer_hint_unmute")));
                         mRingerIcon.setTag(Events.ICON_STATE_MUTE);
                         mRinger.setBackgroundTintList(null);
-                        mRingerIcon.setColorFilter(RingerMuteT);
                     } else {
                         ringerDrawable = mSysUIContext.getDrawable(
                             mSysUIR.drawable("ic_volume_ringer"));
@@ -1048,7 +1043,6 @@ public class VolumeDialogImpl implements VolumeDialog {
                         }
                         mRingerIcon.setTag(Events.ICON_STATE_UNMUTE);
                         mRinger.setBackgroundTintList(ringerbackgroundnormal);
-                        mRingerIcon.setColorFilter(RingerNormalT);
                     }
                     break;
             }
@@ -1334,13 +1328,6 @@ public class VolumeDialogImpl implements VolumeDialog {
                 }
                 row.slider.setProgress(newProgress, true);
             }
-            ColorStateList mIconTint = ColorStateList.valueOf(mContext.getResources().getColor(R.color.row_icon_dark));
-            ColorStateList mIconTintNormal = ColorStateList.valueOf(mContext.getResources().getColor(R.color.row_icon_white));
-            if (newProgress < 500) {
-                row.icon.setImageTintList(mIconTint);
-            } else {
-                row.icon.setImageTintList(mIconTintNormal);
-            }
         }
     }
 
@@ -1552,13 +1539,6 @@ public class VolumeDialogImpl implements VolumeDialog {
                     Events.writeEvent(mContext, Events.EVENT_TOUCH_LEVEL_CHANGED, mRow.stream,
                             userLevel);
                 }
-            }
-            ColorStateList mIconTint = ColorStateList.valueOf(mContext.getResources().getColor(R.color.row_icon_dark));
-            ColorStateList mIconTintNormal = ColorStateList.valueOf(mContext.getResources().getColor(R.color.row_icon_white));
-            if (progress < 500) {
-                mRow.icon.setImageTintList(mIconTint);
-            } else {
-                mRow.icon.setImageTintList(mIconTintNormal);
             }
         }
 
