@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 /*
 ** Copyright 2019 ExtendedUI
 **
@@ -19,25 +18,31 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
-            <corners android:radius="20dp"/>
+            <corners android:radius="20dp" />
             <size android:height="@dimen/custom_volume_dialog_miui_seekbar_width" />
-            <solid android:color="?android:attr/colorBackgroundFloating" />
+            <solid android:color="#00000000" />
         </shape>
     </item>
     <item android:id="@android:id/progress">
-    <clip android:clipOrientation="horizontal" android:gravity="left">
+        <scale
+            android:clipOrientation="horizontal"
+            android:gravity="left"
+            android:scaleWidth="100%">
             <selector>
-                <item android:state_enabled="false"
-                    android:drawable="@android:color/transparent" />
+                <item
+                    android:drawable="@android:color/transparent"
+                    android:state_enabled="false" />
                 <item>
-                    <shape android:shape="rectangle"
+                    <shape
+                        android:shape="rectangle"
                         android:tint="?android:attr/colorAccent">
-                        <corners android:radius="20dp"/>
+                        <corners android:radius="20dp" />
                         <size android:height="@dimen/custom_volume_dialog_miui_seekbar_width" />
                         <solid android:color="?android:attr/colorAccent" />
                     </shape>
                 </item>
             </selector>
-    </clip>
+        </scale>
     </item>
 </layer-list>
+

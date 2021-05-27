@@ -1047,7 +1047,7 @@ public class VolumeDialogImpl implements VolumeDialog {
                                     mSysUIContext.getString(mSysUIR.string("volume_ringer_hint_mute")));
                         }
                         mRingerIcon.setTag(Events.ICON_STATE_UNMUTE);
-                        mRinger.setBackgroundTintList(ringerbackgroundnormal);
+                        mRinger.setBackgroundTintList(null);
                         mRingerIcon.setColorFilter(RingerNormalT);
                     }
                     break;

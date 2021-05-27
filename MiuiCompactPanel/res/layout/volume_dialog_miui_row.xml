@@ -15,21 +15,22 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:tag="row"
-    android:layout_height="wrap_content"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/volume_dialog_miui_panel_width"
+    android:layout_height="wrap_content"
     android:clipChildren="false"
     android:clipToPadding="false"
+    android:tag="row"
     android:theme="@style/qs_theme">
 
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical" >
+        android:gravity="center"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/volume_row_header"
             android:layout_width="wrap_content"
@@ -37,27 +38,42 @@
             android:ellipsize="end"
             android:maxLength="10"
             android:maxLines="1"
-            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.Volume.Header"
             android:textColor="?android:attr/colorControlNormal"
-            android:textAppearance="@style/TextAppearance.Volume.Header" />
+            android:visibility="gone" />
+
         <FrameLayout
             android:id="@+id/volume_row_slider_frame"
             android:layout_width="match_parent"
+            android:layout_height="@dimen/custom_volume_dialog_miui_seekbar_height"
             android:layout_marginTop="@dimen/volume_dialog_miui_slider_margin_top"
             android:layout_marginBottom="@dimen/volume_dialog_miui_slider_margin_bottom"
-            android:layoutDirection="rtl"
-            android:layout_height="@dimen/custom_volume_dialog_miui_seekbar_height">
-            <SeekBar
+            android:layoutDirection="rtl">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginVertical="20dp"
+                android:src="@drawable/volume_dialog_background_line" />
+
+            <com.google.android.material.slider.Slider
                 android:id="@+id/volume_row_slider"
-                android:clickable="true"
                 android:layout_width="@dimen/custom_volume_dialog_miui_seekbar_height"
                 android:layout_height="match_parent"
-                android:layoutDirection="rtl"
                 android:layout_gravity="center"
-                android:progressDrawable="@drawable/volume_dialog_seekbar"
-                android:thumb="@android:color/transparent"
-                android:background="@null"
-                android:rotation="-90" />
+                android:clickable="true"
+                android:focusable="true"
+                android:layoutDirection="rtl"
+                android:rotation="-90"
+                android:translationZ="9dp"
+                app:haloColor="#00000000"
+                app:labelBehavior="gone"
+                app:thumbElevation="0dp"
+                app:thumbRadius="18.5dp"
+                app:trackColorInactive="#00000000"
+                app:trackHeight="37dp" />
+
         </FrameLayout>
 
         <co.potatoproject.plugin.volume.common.AlphaOptimizedImageButton
@@ -65,13 +81,14 @@
             style="@style/VolumeButtons"
             android:layout_width="@dimen/volume_dialog_miui_tap_target_size"
             android:layout_height="@dimen/volume_dialog_miui_tap_target_size"
-            android:background="@drawable/ripple_drawable_20dp"
             android:layout_marginTop="@dimen/volume_dialog_miui_row_icon_margintop"
-            android:tint="@android:color/white"
+            android:background="@drawable/ripple_drawable_20dp"
             android:clickable="false"
-            android:soundEffectsEnabled="false" />
+            android:soundEffectsEnabled="false"
+            android:tint="@android:color/white" />
     </LinearLayout>
 
-    <include layout="@layout/volume_dnd_icon_miui"/>
+    <include layout="@layout/volume_dnd_icon_miui" />
 
 </FrameLayout>
+

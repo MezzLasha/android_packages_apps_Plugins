@@ -2,7 +2,10 @@ android_app {
 
     name: "MiuiCompactPanel",
 
-    static_libs: ["VolumePluginCommon"],
+    static_libs: [
+	"VolumePluginCommon",
+        "com.google.android.material_material",
+	],
 
     resource_dirs: ["res"],
 

@@ -11,4 +11,8 @@ android_library {
     srcs: ["src/**/*.java"],
 
     aaptflags: ["--auto-add-overlay"],
+
+    sdk_version: "system_current",
+    min_sdk_version: "29",
+
 }
