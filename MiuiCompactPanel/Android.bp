@@ -4,7 +4,6 @@ android_app {
 
     static_libs: [
 	"VolumePluginCommon",
-        "com.google.android.material_material",
 	],
 
     resource_dirs: ["res"],
