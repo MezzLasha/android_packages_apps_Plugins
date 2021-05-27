@@ -57,7 +57,7 @@
                 android:layout_marginVertical="20dp"
                 android:src="@drawable/volume_dialog_background_line" />
 
-            <com.google.android.material.slider.Slider
+            <co.potatoproject.plugin.volume.common.Slider
                 android:id="@+id/volume_row_slider"
                 android:layout_width="@dimen/custom_volume_dialog_miui_seekbar_height"
                 android:layout_height="match_parent"

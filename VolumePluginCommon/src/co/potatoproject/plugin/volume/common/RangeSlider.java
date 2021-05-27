@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.android.material.slider;
 
-import com.google.android.material.R;
+package co.potatoproject.plugin.volume.common;
+
+import co.potatoproject.plugin.volume.common.SysUIR;
 
 import android.content.Context;
 import android.content.res.TypedArray;

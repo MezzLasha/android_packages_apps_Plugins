@@ -72,7 +72,7 @@
     <!-- Whether to show the tick marks. Only used when the slider is in discrete mode. -->
     <attr name="tickVisible" format="boolean" />
     <!-- The color of the track. -->
-    <attr name="trackColor" />
+    <attr name="trackColor" format="color" />
     <!-- The color of active portion of the track. -->
     <attr name="trackColorActive" format="color" />
     <!-- The color of inactive portion of the track. -->

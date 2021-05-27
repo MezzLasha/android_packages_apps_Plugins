@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.material.slider;
+package co.potatoproject.plugin.volume.common;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;

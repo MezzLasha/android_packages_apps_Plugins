@@ -12,7 +12,4 @@ android_library {
 
     aaptflags: ["--auto-add-overlay"],
 
-    sdk_version: "system_current",
-    min_sdk_version: "29",
-
 }

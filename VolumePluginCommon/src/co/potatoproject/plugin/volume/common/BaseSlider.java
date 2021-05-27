@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.android.material.slider;
+package co.potatoproject.plugin.volume.common;
 
-import com.google.android.material.R;
+import co.potatoproject.plugin.volume.common.SysUIR;
 
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.RangeInfoCompat.RANGE_TYPE_FLOAT;
 import static androidx.core.math.MathUtils.clamp;
