@@ -1,7 +1,8 @@
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="@dimen/volume_dialog_miui_panel_width"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clipChildren="false"
     android:clipToPadding="false"
     android:tag="row"
@@ -27,11 +28,11 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            app:cardCornerRadius="50dp"
-	    app:cardBackgroundColor="?android:attr/colorBackgroundFloating"
-            app:cardElevation="0dp"
-            app:contentPadding="-0dp"
-            android:layout_height="match_parent">
+            android:layout_height="192dp"
+            app:cardBackgroundColor="?android:attr/colorBackgroundFloating"
+            android:layout_marginBottom="2dp"
+            app:cardCornerRadius="21dp"
+            app:cardElevation="0dp">
 
             <FrameLayout
                 android:id="@+id/volume_row_slider_frame"
@@ -41,26 +42,36 @@
 
                 <SeekBar
                     android:id="@+id/volume_row_slider"
-                    android:layout_width="@dimen/custom_volume_dialog_miui_seekbar_height"
-                    android:layout_height="match_parent"
+                    android:layout_width="178dp"
+                    android:layout_height="43dp"
                     android:layout_gravity="center"
                     android:background="@null"
                     android:clickable="true"
                     android:layoutDirection="rtl"
+                    android:paddingLeft="19dp"
                     android:paddingTop="0dp"
+                    android:paddingRight="19dp"
                     android:paddingBottom="0dp"
-                    android:progress="10"
                     android:progressDrawable="@drawable/volume_dialog_seekbar"
                     android:rotation="-90"
-                    android:thumb="@android:color/transparent" />
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumbo"
+                    android:thumbOffset="16dp" />
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="42dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center|bottom"
+                    app:cardBackgroundColor="?android:attr/colorAccent"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="0dp" />
                 <ImageView
                     android:layout_width="4dp"
-                    android:layout_gravity="center"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="33dp"
-                    android:layout_marginBottom="48dp"
-                    android:background="@drawable/volume_dialog_background_line"/>
+                    android:layout_gravity="center"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginBottom="28dp"
+                    android:background="@drawable/volume_dialog_background_line" />
 
             </FrameLayout>
         </androidx.cardview.widget.CardView>
